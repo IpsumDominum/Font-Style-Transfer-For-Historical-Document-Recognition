@@ -1,0 +1,299 @@
+<style>
+.smooth-borders{
+      border:1px solid #9c9c9c;
+        font: bold 15px Arial,Helvetica,Sans-serif;
+      -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 8px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 8px;    
+        background:white;    
+}
+
+.mainbox{
+    display:flex;
+    margin-top:20px;
+    flex-direction:row;
+}
+.instructions{
+    width:300px;
+    position:relative;
+    height:400px;
+    margin-right:10px;
+    padding: 10px 10px 10px 10px;
+    color:black;
+}
+.imagebox{
+    max-width:400px;
+    height:600px;
+    background:black;
+}
+html{
+    background-image:url({{url_for('static',filename='repeated-square-dark.png')}});
+    background-color:gray;
+    color:white;
+}
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.button{
+    padding:10px 10px 10px 10px;
+}
+.button:hover{
+    background:#9c9c9c;
+}
+.lds-ring {
+  display: inline-block;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left:735px;
+  top:300px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+#main_body{
+    z-index:1;
+}
+
+</style>
+
+<body id="main_body">
+<h1>Label Tool (COMPSCI760)</h1>
+Currently Labeling: {{filename}} | {{current_index}} / {{total_images}}
+<button id="jump" onclick="window.location.href='/'" class="smooth-borders button">Jump to first free</button>
+<div class="mainbox">
+<div class="instructions smooth-borders">
+    <h3>Help:</h3>
+    <h4 id="maininstruct" style="color:blue">Left click to create bounding regions<h4>
+    <h4>Press 'D' to go to next file<h4>
+    <h4>Press 'A' to go to previous file<h4>
+    <h4>Press 'S' to save<h4>
+    <h4>Press 'Z' to undo<h4>
+    <h4>Press 'E' to toggle remove mode<h4>
+    <h4>Press 'Q' to toggle file as invalid<h4>
+    <button id="reset" class="smooth-borders button">Reset</button>
+    <label>Remove Mode :<label id="removeModeLabel" style="color:blue;">OFF</label></label>
+    <br>
+    <br>
+    <label  id="savedLabel" style="color:rgba(255,0,255,0.5);">Not saved...</label>
+</div>
+<div id="loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<canvas class="smooth-borders imagebox" id="myCanvas">
+Your browser does not support the HTML canvas tag.
+Please let Chen know on groupchat.
+</canvas>
+</div>
+</body>
+
+<script
+src="{{url_for('static',filename='jquery-3.6.0.min.js')}}"
+></script>
+<script>
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+document.getElementById("loader").style.display = 'block';
+var bgImg= new Image();
+bgImg.src = "{{url_for('static',filename='data/'+filename)}}";
+var WIDTH = bgImg.width;
+var HEIGHT = bgImg.height;
+if(HEIGHT!=0 && WIDTH!=0){
+canvas.height = HEIGHT;
+canvas.width = WIDTH;
+}else{
+    canvas.width = 500;
+    canvas.height = 600;
+}
+bgImg.onload = function(){
+    document.getElementById("loader").style.display = 'none';
+}
+
+var x = 0
+var y = 0;
+var prevX =0;
+var prevY =0;
+var clicked = false;
+var removeMode = false;
+var rects = eval("{{rects}}");
+var removeModeLabel = document.getElementById("removeModeLabel");
+var saved = false;
+var invalid = eval("{{invalid}}".toLowerCase());
+
+document.onmousemove = function(event){
+    var rect = canvas.getBoundingClientRect();
+    scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for X
+    scaleY = canvas.height / rect.height;  
+    x = (event.clientX - rect.left)*scaleX;
+    y = (event.clientY- rect.top)*scaleY;  
+}
+document.onmousedown = function(event){
+    if (removeMode==true) {
+        //right click, remove rect...
+        new_rects = rects.filter((rect)=>
+                !(Math.abs(x/WIDTH-rect[2]) <=Math.abs(rect[2]-rect[0])&& 
+                Math.abs(x/WIDTH-rect[0]) <=Math.abs(rect[2]-rect[0])&&
+                Math.abs(y/HEIGHT-rect[3]) <=Math.abs(rect[3]-rect[1])&&
+                Math.abs(y/HEIGHT-rect[1]) <=Math.abs(rect[3]-rect[1])));
+        if(new_rects.length!=rects.length){
+            savedLabel.style.color = "rgba(255,0,255,0.5)";
+            savedLabel.innerText = "Not Saved...";
+        }
+        rects = new_rects;                
+    }else{
+        if(x>=0 && x<=WIDTH && y>=0 && y<=HEIGHT){
+            if(clicked==false){
+                clicked = true;
+                prevX = x;
+                prevY = y;
+            }else{            
+                rects.push([prevX/WIDTH,prevY/HEIGHT,x/WIDTH,y/HEIGHT])
+                savedLabel.style.color = "rgba(255,0,255,0.5)";
+                savedLabel.innerText = "Not Saved...";
+                clicked = false;            
+            }
+        }else{
+                clicked = false; 
+            }
+            
+    }
+    
+}
+document.getElementById("reset").onclick= function(){
+    var confirmation = confirm("Are you sure to reset this label?");
+    if(confirmation){
+        rects = [];
+        savedLabel.style.color = "rgba(255,0,255,0.5)";
+        savedLabel.innerText = "Not Saved...";
+        clicked = false;
+    }
+}
+document.onkeydown = function(event){
+      if(event.keyCode===65){
+          //A
+          window.location.href = "/?filename={{filename}}&redirect=back";
+      }
+      if(event.keyCode===68){
+          //D
+          window.location.href = "/?filename={{filename}}&redirect=next";
+      }
+      if(event.keyCode===90){
+          //Z        
+          if(clicked==true){
+              clicked = false;
+          }else{
+            rects = rects.slice(0,rects.length-1);
+            savedLabel.style.color = "rgba(255,0,255,0.5)";
+            savedLabel.innerText = "Not Saved...";
+          }
+      }
+      if(event.keyCode===81){
+          //Q
+          invalid = !invalid;
+          submit(invalid);
+      }
+      if(event.keyCode===83){
+          //S
+          savedLabel.style.color = "rgba(0,255,0,0.8)";
+          savedLabel.innerText = "Saved...";
+          submit(invalid);
+      }
+      if(event.keyCode===69){
+          //E
+          removeMode = !removeMode;
+          removeModeLabel.innerText = removeMode ? 'ON' : "OFF";
+          if(removeMode){
+            removeModeLabel.style.color = "red";
+            maininstruct.style.color = "red";
+            maininstruct.innerText = "Left click to remove bounding regions";
+            clicked = false;
+          }else{
+            removeModeLabel.style.color = "blue";
+            maininstruct.style.color = "blue";
+            maininstruct.innerText = "Left click to create bounding regions";
+          }
+          
+      }
+      
+}
+function submit(invalid){
+var data = {"rects":rects,"filename":"{{filename}}","invalid":invalid};
+$.ajax({
+    url: '/',
+    data: JSON.stringify(data),
+    type: 'POST',
+    success: function (response) {
+        //success
+        if(response["redirect"]=="."){
+            //pass
+        }else{
+            window.location.href = response["redirect"];
+        }
+
+    },
+    error: function (error) {
+
+    },
+    dataType: "json",
+    contentType: 'application/json;charset=UTF-8',
+});
+}
+
+ctx.strokeStyle = "rgb(0,0,255)";
+ctx.fillStyle = "black";
+ctx.fillRect(0,0,WIDTH,HEIGHT);
+setInterval(function(){        
+    ctx.fillRect(0,0,WIDTH,HEIGHT);    
+    ctx.drawImage(bgImg,
+    0,0,
+    WIDTH,HEIGHT);    
+    if(invalid == true){
+        ctx.fillStyle = "rgba(0,0,0,0.8)";
+        ctx.fillRect(0,0,WIDTH,HEIGHT);
+        ctx.fillStyle = "orange";
+        ctx.font = '100px serif';
+        ctx.fillText('INVALID', 20, 100);
+        ctx.fillStyle = "black";
+    }else{
+        if(clicked){
+            ctx.strokeRect(prevX,prevY,x-prevX,y-prevY);
+        }
+        rects.forEach((rect)=>{
+            ctx.strokeRect(rect[0]*WIDTH,rect[1]*HEIGHT,(rect[2]-rect[0])*WIDTH,(rect[3]-rect[1])*HEIGHT);
+        })
+    }
+    
+},200);
+wall.style.display = "flex";
+</script>

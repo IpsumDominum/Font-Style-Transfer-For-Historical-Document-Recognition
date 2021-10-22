@@ -1,0 +1,13 @@
+segmented_lines/
+samples/
+segmented/
+segmented_test/
+samples_test/
+models/ATTEND_AND_TELL/
+models/ATTEND2/
+models/ATTEND3/
+models/CONV_FULL/
+models/LSTM_ONLY/
+models/STYLENEW/
+models/STYLE/
+Style_Transfer_Data/

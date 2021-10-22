@@ -1,0 +1,92 @@
+<style>
+.wall{
+    width:1000px;
+    height:1000px;
+    background:"rgba(0,0,0,0.5)";
+    position:absolute;
+    z-index:10000;
+    display:flex;
+    color:white;
+}
+html{
+    background-image:url({{url_for('static',filename='repeated-square-dark.png')}});
+    background-color:gray;
+    color:white;
+}
+img{
+    border:orange solid 3px;
+      border:1px solid #9c9c9c;
+        font: bold 15px Arial,Helvetica,Sans-serif;
+      -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 8px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 8px;    
+        background:white;    
+}
+button{
+    padding:10px 10px 10px 10px;
+    background:#9c9c9c;
+          border:1px solid #9c9c9c;
+        font: bold 15px Arial,Helvetica,Sans-serif;
+      -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 8px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 8px;    
+        background:white;    
+        position:absolute;
+        margin-left:15px;
+        margin-top:10px;
+}
+button:hover{
+    background:#9c9c9c;
+}
+input{
+    position:absolute;
+    margin-left:100px;
+    margin-top:20px;
+    width:300px;
+}
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+</style>
+<body>
+<div style="margin-left:-300px;">
+<div id="wall" class="wall">
+<div id="signin">
+<h1>Who are you?</h1>
+<h4>Choose your name and enter your password to get started...<h4>
+<img src="{{url_for('static',filename='Chong.png')}}"><button>Chong</button>
+<input type="password" id="progress_chong">
+<br>
+<br>
+<img src="{{url_for('static',filename='Alex.png')}}"><button>Alex</button>
+<input type="password" id="progress_alex">
+<br>
+<br>
+<img src="{{url_for('static',filename='Michael.png')}}"><button>Michael</button>
+<input type="password" id="progress_michael">
+<br>
+<br>
+<img src="{{url_for('static',filename='Connor.png')}}"><button>Connor</button>
+<input type="password" id="progress_connor">
+<br>
+<br>
+<img src="{{url_for('static',filename='Chen.png')}}"><button>Chen</button>
+<input type="password" id="progress_chen">
+<br>
+</div>
+</div>
+</div>
+</body>
+<style>
+function login(name){
+    pass = document.getElementById("progress_"+name);
+}
+</style>
