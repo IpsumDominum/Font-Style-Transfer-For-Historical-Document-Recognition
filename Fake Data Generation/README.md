@@ -1,10 +1,10 @@
 ### First generate the samples
 ```
-python gen_samples.py --number_of_samples_per_font
+python generate_fakedata.py --number_of_samples_per_font
 
 #ie:
 
-python gen_samples.py 100
+python generate_fakedata.py 100
 ```
 You should get a file as output, when all is finished, called "labels.pkl"
 
