@@ -11,4 +11,4 @@ Niblack's Method             |  Nick's Method           |  Sauvola's Method
 
 ### Textline Extraction
 
-!
+![seg](seg.PNG)
