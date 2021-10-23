@@ -1,4 +1,4 @@
-# Style Transfer Could Be All You Needed For Historical Document Recognition (Auckland University COMPSCI760 Project)
+# Font Style Transfer OCR Could Be All You Need (Auckland University COMPSCI760 Project)
 
 
 ### Setup python / enviornment
@@ -36,3 +36,16 @@ Remember to click "Add to system path" when you first install python. Otherwise 
 1.Preprocessing Algorithms ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Preprocessing%20And%20Data%20Mining)
 2.Data Labelling ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Data%20Label%20Tool)
 3. Viterbi Algorithm ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/blob/master/Viterbi_Algorithm.R)
+
+
+### FAQ
+```
+Q: Is Font Style Transfer OCR all you need for fishing? 
+
+A: No, you'll need fishing rods, baits etc.
+```
+```
+Q: Is Font Style Transfer OCR all you need to throw a revolution against the cuban government?
+
+A: Maybe, but probably not. See Tutorial ![Tutorial](https://en.wikipedia.org/wiki/Che_Guevara)
+```
