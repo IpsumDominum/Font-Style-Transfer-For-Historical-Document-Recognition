@@ -18,3 +18,6 @@ Use python from https://www.python.org/.
 If using windows, remember to click "Add to system path" when you first install python. Otherwise follow
 this to add python to your system path.
 (https://geek-university.com/python/add-python-to-the-windows-path/)
+
+
+![pipeline](pipeline.PNG)
