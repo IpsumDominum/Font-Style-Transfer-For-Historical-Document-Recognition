@@ -15,5 +15,5 @@ python load_labels.py
 ```
 
 ![Image 1](Results.PNG)
-![Image 1](Comp.PNG)
-![Image 1](Doc.PNG)
+![Image 1](comp.PNG)
+![Image 1](docs.PNG)
