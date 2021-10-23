@@ -34,7 +34,9 @@ Remember to click "Add to system path" when you first install python. Otherwise 
 ### Miscellaneous
 
 1.Preprocessing Algorithms ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Preprocessing%20And%20Data%20Mining)
+
 2.Data Labelling ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Data%20Label%20Tool)
+
 3. Viterbi Algorithm ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/blob/master/Viterbi_Algorithm.R)
 
 
