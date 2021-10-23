@@ -21,3 +21,16 @@ this to add python to your system path.
 
 
 ![pipeline](pipeline.PNG)
+
+
+### Pipeline
+
+1. Prepare Fake Data ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Fake%20Data%20Generation)
+2. Train Model ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Model%20Training)
+3. Test On Real Data ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Test%20On%20Real%20Data)
+
+### Miscellaneous
+
+1.Preprocessing Algorithms ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Preprocessing%20And%20Data%20Mining)
+2.Data Labelling ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/tree/master/Data%20Label%20Tool)
+3. Viterbi Algorithm ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/blob/master/Viterbi_Algorithm.R)
