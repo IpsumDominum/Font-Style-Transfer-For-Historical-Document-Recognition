@@ -2,8 +2,8 @@
 
 
 ### Setup python / enviornment
-The code should be python2 and 3 compatible.
-But recommended to use python3, since python2 is no longer maintained.
+
+Please use Python3
 
 ```bash
 python -m pip install -r requirements.txt
