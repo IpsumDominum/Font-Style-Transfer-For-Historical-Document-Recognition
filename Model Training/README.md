@@ -1,15 +1,21 @@
-### First generate the samples
+### Train models
 ```
-python gen_samples.py --number_of_samples_per_font
-
+python train --['lstm','style','attend'] --checkpoint_num
+```
 #ie:
+```
+python lstm 0
+```
 
-python gen_samples.py 100
-```
-You should get a file as output, when all is finished, called "labels.pkl"
+When checkpoint_num == 0, the model trains from scratch.
 
-### load_labels.py is an example of loading the saved labels
-Please read load_labels.py for more details.
+### Test models
+
+Put model checkpoints into models/folder, where folder is "LSTMONLY", for instance.
+Then run
 ```
-python load_labels.py
+python test --['lstm','style','attend'] --checkpoint_num
 ```
+
+### CPU and GPU 
+Please edit train.py and test.py and comment out the suitable lines specifying the device.
