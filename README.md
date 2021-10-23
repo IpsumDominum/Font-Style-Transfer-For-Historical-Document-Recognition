@@ -45,7 +45,7 @@ Q: Is Font Style Transfer OCR all you need for fishing?
 A: No, you'll need fishing rods, baits etc.
 ```
 ```
-Q: Is Font Style Transfer OCR all you need to throw a revolution against the cuban government?
+Q: Is Font Style Transfer OCR all you need to throw a revolution in Cuba?
 
 A: Maybe, but probably not. See Tutorial ![Tutorial](https://en.wikipedia.org/wiki/Fidel_Castro)
 ```
