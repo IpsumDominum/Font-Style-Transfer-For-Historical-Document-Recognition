@@ -14,7 +14,7 @@ bounding boxes.
 If you wish to run the program, you would need to supply three things : 
 1. Fonts ending in ".ttf" inside the fonts folder.
 2. Blank files ending in .png inside the Blanks folder.
-3. Text file inside data folder. Edit scripts/gen_samples to adjust for input textfile name. Otherwise name the file King James Bible.txt
+3. Text file inside data folder. Default file is kingjamesbible. Please edit text in this file. Otherwise edit scripts/gen_samples.py.
 
 
 
