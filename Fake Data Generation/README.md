@@ -13,3 +13,7 @@ Please read load_labels.py for more details.
 ```
 python load_labels.py
 ```
+
+![Image 1](Results.PNG)
+![Image 1](Comp.PNG)
+![Image 1](Doc.PNG)
