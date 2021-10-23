@@ -1,4 +1,4 @@
-# Style Transfer Could Be All You Needed For Historical Document Recognition
+# Style Transfer Could Be All You Needed For Historical Document Recognition (Auckland University COMPSCI760 Project)
 
 
 ### Setup python / enviornment
