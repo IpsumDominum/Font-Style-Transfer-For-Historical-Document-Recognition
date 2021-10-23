@@ -38,7 +38,7 @@ Remember to click "Add to system path" when you first install python. Otherwise 
 3. Viterbi Algorithm ![link](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/blob/master/Viterbi_Algorithm.R)
 
 
-### FAQ
+### FAQ (Frequently Asked Questions)
 ```
 Q: Is Font Style Transfer OCR all you need for fishing? 
 
