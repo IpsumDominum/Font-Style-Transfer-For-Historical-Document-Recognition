@@ -11,8 +11,10 @@ python -m pip install -r requirements.txt
 ```
 or 
 ```bash
-python3 -m pip install opencv-python
+python3 -m pip install -r requirements.txt
 ```
+It is recommended to set up a virtual enviornment. ![How To Setup Python Virtual Enviornment](https://realpython.com/python-virtual-environments-a-primer/)
+
 If it doesn't work, for instance, if you don't have pip. Download pip https://pip.pypa.io/en/stable/installation/.
 Use python from https://www.python.org/.
 If using windows, remember to click "Add to system path" when you first install python. Otherwise follow
