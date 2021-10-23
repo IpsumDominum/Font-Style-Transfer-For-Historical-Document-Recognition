@@ -14,6 +14,7 @@ Please read load_labels.py for more details.
 python load_labels.py
 ```
 
-![Image 1](Results.PNG)
 ![Image 1](comp.PNG)
 ![Image 1](docs.PNG)
+
+![Image 1](Results.PNG)
