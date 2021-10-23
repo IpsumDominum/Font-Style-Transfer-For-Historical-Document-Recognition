@@ -1,3 +1,5 @@
+# Model training
+
 ### Preparing the data for training.
 
 Please put generated data, the "Style_Transfer_Data" folder, into this directory for style transfer training.
@@ -24,3 +26,14 @@ python test --['lstm','style','attend'] --checkpoint_num
 
 ### CPU and GPU 
 Please edit train.py and test.py and comment out the suitable lines specifying the device.
+
+### Loss Curve
+The current training parameters will probably overfit... 
+![loss](loss.PNG)
+
+### Visual Results
+![v_1](v_1.PNG)
+![v_2](v_2.PNG)
+![v_3](v_3.PNG)
+![v_4](v_4.PNG)
+
