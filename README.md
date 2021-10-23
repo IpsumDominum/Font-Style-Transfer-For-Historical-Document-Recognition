@@ -52,8 +52,12 @@ A: Maybe, but probably not. See Tutorial ![Tutorial](https://en.wikipedia.org/wi
 ```
 Q: Does saturn have moons?
 
-A: Not sure how this is related to Font Style Transfer, but yes, in fact, there are 82 confirmed moons of Saturn according to Wikipedia. They are,
-S/2009 S 1 ,
+A: Not sure how this is related to Font Style Transfer, but yes, in fact, 
+there are 82 confirmed moons of Saturn according to Wikipedia. 
+
+They are:
+
+1   S/2009 S 1 ,
 2 	XVIII 	Pan,
 3 	XXXV 	Daphnis,
 4 	XV 	Atlas, 	
