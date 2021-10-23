@@ -17,9 +17,9 @@ It is recommended to set up a virtual enviornment. ![How To Setup Python Virtual
 
 If it doesn't work, for instance, if you don't have pip. Download pip https://pip.pypa.io/en/stable/installation/.
 Use python from https://www.python.org/.
-If using windows, remember to click "Add to system path" when you first install python. Otherwise follow
-this to add python to your system path.
-(https://geek-university.com/python/add-python-to-the-windows-path/)
+
+Remember to click "Add to system path" when you first install python. Otherwise :
+![How To Add Python To System Path](https://geek-university.com/python/add-python-to-the-windows-path/)
 
 
 ![pipeline](pipeline.PNG)
