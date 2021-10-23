@@ -1,3 +1,8 @@
+### Preparing the data for training.
+
+Please put generated data, the "Style_Transfer_Data" folder, into this directory for style transfer training.
+Put "segmented" and labels, (rename "labels.pkl" as "train_labels.pkl") and put in data folder for lstm and attend_show_and_tell training.
+
 ### Train models
 ```
 python train --['lstm','style','attend'] --checkpoint_num
