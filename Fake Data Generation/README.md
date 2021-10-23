@@ -13,8 +13,12 @@ Please read load_labels.py for more details.
 ```
 python load_labels.py
 ```
-
-![Image 1](comp.PNG)
+### Example of fonts and blanks
 ![Image 1](docs.PNG)
 
+### Results from generation (With bounding box)
 ![Image 1](Results.PNG)
+
+### Comparison with real historical document. (Rightmost is real)
+![Image 1](comp.PNG)
+
