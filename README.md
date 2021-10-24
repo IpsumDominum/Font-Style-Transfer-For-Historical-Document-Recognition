@@ -1,4 +1,4 @@
-# Font Style Transfer OCR Could Be All You Need (Auckland University COMPSCI760 Project)
+#  Is Font Style Transfer All You Need For Historical Document Recognition? (Auckland University COMPSCI760 Project)
 
 
 ### Setup python / enviornment
