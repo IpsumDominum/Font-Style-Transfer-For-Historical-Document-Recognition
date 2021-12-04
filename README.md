@@ -1,5 +1,9 @@
 #  Is Font Style Transfer All You Need For Historical Document Recognition? (Auckland University COMPSCI760 Project)
 
+# About
+
+This is an one semester university project. The results were obtained quite last minute so they aren't great yet, lots of things can be done to improve on it and so hopefully in the future this work can be extended... See report : 
+
 
 ### Setup python / enviornment
 
