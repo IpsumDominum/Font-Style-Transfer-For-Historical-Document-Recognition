@@ -2,7 +2,7 @@
 
 # About
 
-This is an one semester university project. The results were obtained quite last minute so they aren't great yet, lots of things can be done to improve on it and so hopefully in the future this work can be extended... See report : 
+This is an one semester university project. The results were obtained quite last minute so they aren't great yet, lots of things can be done to improve on it and so hopefully in the future this work can be extended... See report : ![Report](https://github.com/IpsumDominum/Is-Font-Style-Transfer-All-You-Need-For-Historical-Document-Recognition-/blob/master/Font_Style_Transfer_Is_All_You_Need__Copy_.pdf)
 
 
 ### Setup python / enviornment
