@@ -1,4 +1,4 @@
-#  Is Font Style Transfer All You Need For Historical Document Recognition? (Auckland University COMPSCI760 Project)
+#  Font Style Transfer For Historical Document Recognition
 
 # About
 
